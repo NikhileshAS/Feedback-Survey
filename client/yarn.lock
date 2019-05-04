@@ -102,7 +102,7 @@
   dependencies:
     "@babel/helper-function-name" "^7.1.0"
     "@babel/types" "^7.4.0"
-    lodash "^4.17.11"
+    lodash "^4.17.11" 
 
 "@babel/helper-explode-assignable-expression@^7.1.0":
   version "7.1.0"
