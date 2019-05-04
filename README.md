@@ -1,4 +1,4 @@
 # Feedback-Survey
-MERN stack application
-Passport authentication via Google
-Ant Design components
+MERN stack application,
+Passport authentication via Google,
+Ant Design components.
