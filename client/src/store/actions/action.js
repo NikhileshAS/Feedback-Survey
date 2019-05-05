@@ -1,5 +1,5 @@
 import axios from "axios";
-import { FETCH_USER, LOGOUT_USER } from "./actionTypes";
+import { FETCH_USER } from "./actionTypes";
 
 export function fetchUser() {
   return async dispatch => {
@@ -8,10 +8,9 @@ export function fetchUser() {
   };
 }
 
-export function logoutUser() {
-  console.log("Logout User");
+export function handleToken(token) {
   return async dispatch => {
-    const user = await axios.get("/api/logout");
-    dispatch({ type: LOGOUT_USER });
+    const res = await axios.post("/api/stripe", token);
+    dispatch({ type: FETCH_USER, payload: res.data });
   };
 }
