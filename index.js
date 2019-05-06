@@ -8,6 +8,7 @@ const bodyParser = require("body-parser");
 const mongodbKey = require("./configs/keys").MONGODB_URI;
 const cookieKey = require("./configs/keys").COOKIE_KEY;
 require("./models/user");
+require("./models/survey");
 require("./services/passport");
 
 mongoose.connect(mongodbKey, { useNewUrlParser: true });
@@ -28,6 +29,7 @@ app.use(passport.session());
 
 require("./routes/authRoutes")(app);
 require("./routes/paymentRoutes")(app);
+require("./routes/surveyRoutes")(app);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));

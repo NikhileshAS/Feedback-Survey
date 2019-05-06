@@ -4,10 +4,9 @@ import Layout from "./Layout";
 import { connect } from "react-redux";
 
 import * as actions from "../store/actions/action";
-import Surveys from "./Surveys";
-
+import SurveyNew from "./Surveys/SurveyNew";
+import Dashboard from "./Dashboard";
 const Landing = () => <div>Landing</div>;
-
 class App extends React.Component {
   componentDidMount() {
     this.props.fetchUser();
@@ -17,7 +16,8 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <Layout>
-          <Route exact path="/surveys" component={Surveys} />
+          <Route exact path="/surveys/new" component={SurveyNew} />
+          <Route exact path="/surveys" component={Dashboard} />
           <Route exact path="/" component={Landing} />
         </Layout>
       </BrowserRouter>

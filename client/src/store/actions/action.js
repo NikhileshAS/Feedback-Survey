@@ -14,3 +14,10 @@ export function handleToken(token) {
     dispatch({ type: FETCH_USER, payload: res.data });
   };
 }
+
+export function submitSurvey(values) {
+  return async dispatch => {
+    const res = await axios.post("/api/surveys", values);
+    dispatch({ type: FETCH_USER, payload: res.data });
+  };
+}

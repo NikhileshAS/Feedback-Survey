@@ -21,7 +21,7 @@ class EmailyLayout extends React.Component {
       <Layout>
         <Header
           style={{
-            backgroundColor: "#B22222",
+            backgroundColor: constants.THEME_MAROON,
             display: "flex",
             padding: 15
           }}
@@ -36,6 +36,17 @@ class EmailyLayout extends React.Component {
           {this.props.auth ? (
             <div style={{ display: "flex" }}>
               <Payment />
+              <Link to="/surveys">
+                <Button
+                  type="primary"
+                  style={{
+                    marginLeft: 20,
+                    backgroundColor: constants.THEME_GREY
+                  }}
+                >
+                  Surveys
+                </Button>
+              </Link>
               <Typography
                 style={{
                   paddingLeft: 20,
