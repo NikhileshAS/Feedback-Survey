@@ -47,6 +47,7 @@ class EmailyLayout extends React.Component {
                   Surveys
                 </Button>
               </Link>
+
               <Typography
                 style={{
                   paddingLeft: 20,

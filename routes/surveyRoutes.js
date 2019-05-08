@@ -11,6 +11,13 @@ const template = require("../services/emailTemplates/surveyTemplate");
 const Survey = mongoose.model("surveys");
 
 module.exports = app => {
+  app.get("/api/mysurveys", RequireLogin, async (req, res) => {
+    const users = {};
+    const surveys = await Survey.find({ _user: req.user.id });
+    surveys.map(user => (users[user._id] = user));
+    res.send({ users });
+  });
+
   app.post("/api/surveys/webhooks", (req, res) => {
     _.chain(req.body)
       .map(({ url, email }) => {
